@@ -23,6 +23,7 @@ public class Quest : MonoBehaviour
         QuestSteps = input;
     }
 
+    //test
     // Update is called once per frame
 
     private void OnTriggerEnter(Collider other)

@@ -57,6 +57,8 @@ public class Host : MonoBehaviour
         }
     }
 
+    //Test
+
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.CompareTag("NPC")) return;
