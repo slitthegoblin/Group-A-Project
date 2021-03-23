@@ -23,7 +23,7 @@ public class Client : MonoBehaviour
             DisplayLine = DialogLines[CurrentLine];
         }
         DisplayLine = DialogLines[CurrentLine];
-        //Tester
+        //Testerjhgkhjgk
         if (!IsTalk)
         {
             CurrentLine = 0;
