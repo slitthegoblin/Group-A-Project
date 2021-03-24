@@ -11,7 +11,7 @@ namespace RpgAdventure
 
         void Start()
         {
-            Instantiate(itemPrefab, transform);
+            Instantiate(itemPrefab, itemPrefab.transform.position, Quaternion.identity);
             Destroy(transform.GetChild(0).gameObject);
         }
 
