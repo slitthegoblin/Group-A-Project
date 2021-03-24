@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace RpgAdventure
 {
-    public class FixedUpdate : MonoBehaviour
+    public class FixedUpdateFollow : MonoBehaviour
     {
+
         public Transform toFollow;
 
-        void FixedUpdateToFollow()
+        void FixedUpdate()
         {
             if (toFollow == null) { return; }
             transform.position = toFollow.position;
             transform.rotation = toFollow.rotation;
         }
+
     }
 }
