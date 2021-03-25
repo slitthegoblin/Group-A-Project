@@ -2265,6 +2265,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8261621877918442786}
+  - component: {fileID: -7608151807123226229}
+  - component: {fileID: -4282700110292447492}
   m_Layer: 0
   m_Name: SpikedWeapon
   m_TagString: Untagged
@@ -2280,8 +2282,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8785676248767332248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.55, z: 18.792}
-  m_LocalScale: {x: 10.0285015, y: 10.0285015, z: 10.0285015}
+  m_LocalPosition: {x: 0, y: -1.01, z: 18.792}
+  m_LocalScale: {x: 4.9616594, y: 4.9616594, z: 4.9616594}
   m_Children:
   - {fileID: 153414230166330801}
   - {fileID: 7482848660664683964}
@@ -2298,6 +2300,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7608151807123226229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8785676248767332248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc13dc7115cbfd4981912614544d150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &-4282700110292447492
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8785676248767332248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07687598, y: 0.12843844, z: 0.08706903}
+  m_Center: {x: -0.0019222436, y: 0.084607884, z: -0.04054682}
 --- !u!1 &8862232444661289725
 GameObject:
   m_ObjectHideFlags: 0
