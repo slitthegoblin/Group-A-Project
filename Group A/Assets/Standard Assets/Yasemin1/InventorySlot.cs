@@ -5,8 +5,10 @@ using UnityEngine;
 
 namespace RpgAdventure
 {
+
     public class InventorySlot : MonoBehaviour
     {
+
 
         public int index;
         public string spikedWeapon;

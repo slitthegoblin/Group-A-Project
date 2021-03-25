@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 namespace RpgAdventure
 {
     public class InventoryManager : MonoBehaviour
@@ -11,10 +12,13 @@ namespace RpgAdventure
         //public Dictionary<string, GameObject> inventory = new Dictionary<string, GameObject>();
         public List<InventorySlot> inventory = new List<InventorySlot>();
 
+
+    
+        public GameObject spikedWeaponSpawn;
+        public GameObject spikedWeaponPrefab;
         public int inventorySize;
         public Transform inventoryPanel;
         public int itemSpawner;
-        public int spikedWeaponPrefab;
 
         private void Awake()
         {
@@ -36,7 +40,8 @@ namespace RpgAdventure
         }
 
 
-        private void AddItem(GameObject spikedWeapon)
+
+                private void AddItem(GameObject spikedWeapon)
         {
 
             var inventorySlot = GetFreeSlot();
@@ -45,12 +50,6 @@ namespace RpgAdventure
                 Debug.Log("Inventory full");
                 return;
             }
-
-            var spikedWeaponToPickup = itemSpawner.spikedWeaponPrefab;  // this also not working?
-
-            inventorySlot.Place(spikedWeaponToPickup);
-            Debug.Log("Added " + spikedWeaponToPickup.name);
-            Destroy(itemSpawner.spikedWeaponPrefab); //<- meant to be the game object which is the prefab either way dont work
         }
 
 
