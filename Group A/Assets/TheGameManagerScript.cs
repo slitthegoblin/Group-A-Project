@@ -1,28 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class TheGameManagerScript : MonoBehaviour
+namespace RpgAdventure
 {
-
-    public GameObject axeSpawn;
-    public GameObject axePrefab;
-    public GameObject knifeWeaponSpawn;
-    public GameObject knifeWeaponPrefab;
-    public GameObject spikedWeaponSpawn;
-    public GameObject spikedWeaponPrefab;
-
-    // Start is called before the first frame update
-    void Start()
+    public class TheGameManagerScript : MonoBehaviour
     {
-        Instantiate(axePrefab, axeSpawn.transform.position, Quaternion.identity);
-        Instantiate(knifeWeaponPrefab, knifeWeaponSpawn.transform.position, Quaternion.identity);
-        Instantiate(spikedWeaponPrefab, spikedWeaponSpawn.transform.position, Quaternion.identity);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public GameObject axeSpawn;
+        public GameObject axePrefab;
+        public GameObject knifeWeaponSpawn;
+        public GameObject knifeWeaponPrefab;
+        public GameObject spikedWeaponSpawn;
+        public GameObject spikedWeaponPrefab;
+        public UnityEvent<ItemSpawner> OnItemPickup;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            Instantiate(axePrefab, axeSpawn.transform.position, Quaternion.identity);
+            Instantiate(knifeWeaponPrefab, knifeWeaponSpawn.transform.position, Quaternion.identity);
+            Instantiate(spikedWeaponPrefab, spikedWeaponSpawn.transform.position, Quaternion.identity);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
