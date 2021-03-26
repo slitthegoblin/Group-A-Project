@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //test
 
@@ -15,10 +16,9 @@ public class QuestMannager : MonoBehaviour
             quest.SetQuestSteps(other.GetComponent<QuestStart>().QuestSteps);
             quest.QuestName = other.gameObject.GetComponent<QuestStart>().QuestName;
             quest.CurrentStep = 0;
-            Destroy(other.gameObject, .1f);
+            quest.QuestTextBox = GameObject.Find("PlayerQuestDisplay").GetComponent<Text>();
+            quest.QuestTextBox.text = other.gameObject.GetComponent<QuestStart>().QuestName;
         }
     }
-
-
 
 }
