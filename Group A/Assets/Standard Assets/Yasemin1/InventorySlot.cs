@@ -9,7 +9,7 @@ namespace RpgAdventure
     public class InventorySlot : MonoBehaviour
     {
 
-
+        public bool inventorySlot;
         public int index;
         public string spikedWeapon;
         private string spikedWeaponName;
