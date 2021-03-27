@@ -17,6 +17,10 @@ namespace RpgAdventure
         public GameObject playerCollecting;
         public GameObject spikedWeaponSpawn;
         public GameObject spikedWeaponPrefab;
+        public GameObject AxeSpawn;
+        public GameObject AxePrefab;
+        public GameObject KnifeWeaponSpawn;
+        public GameObject KnifeWeaponPrefab;
 
         public bool spikedWeapon;
         //private bool Destroy;
@@ -36,16 +40,47 @@ namespace RpgAdventure
             if (collision.gameObject.name == "test")
                 print("tester is working");
 
-
-            if (collision.gameObject.name == "SpikedWeapon(Clone)")
-            {   //two equals to compare and one = is to set
-                Item toAddtoInventory = new Item();
-                toAddtoInventory.thisItem = Item.itemType.SpikedWeapon; //thing on end is field within that class
-                inventory.Add(toAddtoInventory);
-
-                InventorySlot.globalInv
-
+            //switch faster than lots of if 
+            switch (collision.gameObject.name)  //switch - check the name of the object hte character is colliding with
+            {
+            case "SpikedWeapon(Clone)": //each of the lines that start with case, checks the name and runs the code below
+                print("run in to spiked weapon"); //print to check if working in console
+                InventorySlot.globalInv.ForEach(invSlot => {  //loop through all inv slots and find the one that corresponds to the item the player has collided with
+                    if (invSlot.item.thisItem == Item.itemType.SpikedWeapon)
+                    {
+                        invSlot.Show(); //show the item in the inventory
+                    }
+                });
+                break;
+            case "Axe":
+                print("run in to ax");
+                InventorySlot.globalInv.ForEach(invSlot => {
+                    if (invSlot.item.thisItem == Item.itemType.Axe)
+                    {
+                        invSlot.Show();
+                    }
+                });
+                break;
+            case "KnifeWeapon":
+                print("run in to nif");
+                InventorySlot.globalInv.ForEach(invSlot => {
+                    if (invSlot.item.thisItem == Item.itemType.Knife)
+                    {
+                        invSlot.Show();
+                    }
+                });
+                break;
             }
+
+            //if (collision.gameObject.name == "SpikedWeapon(Clone)")
+            //{   //two equals to compare and one = is to set
+            //    Item toAddtoInventory = new Item();
+            //    toAddtoInventory.thisItem = Item.itemType.SpikedWeapon; //thing on end is field within that class
+            //    inventory.Add(toAddtoInventory);
+
+
+                
+            //}
 
 
            //var placeHolder = collision.gameObject.GetComponent<Item>();

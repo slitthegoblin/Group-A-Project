@@ -8,8 +8,9 @@ namespace RpgAdventure
 {
     public class InventorySlot : MonoBehaviour
     {
-
+        public RawImage itemImage;
         public static List<InventorySlot> globalInv; //globalinv if u change on one it change on all
+
 
         public bool inventorySlot;
         public int index;
@@ -21,15 +22,31 @@ namespace RpgAdventure
         //private string spikedWeaponName;
         //public int spikedWeaponPrefab;
 
-
-        public InventorySlot(int index)
+        // Start is called before the first frame update
+        void Start()
         {
-            this.index = index;
-            if (globalInv == null)
+            if (globalInv == null) //if global list of inventory slots doesnt exist yet 
             {
-                globalInv = new List<InventorySlot>();
+                globalInv = new List<InventorySlot>(); //then make the list
             }
             globalInv.Add(this);
+            Hide();
+        }
+
+        public void Show()
+        { 
+            itemImage.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f); // make the item normal size - scale it to 60%
+        }
+
+        public void Hide()
+        {
+            itemImage.transform.localScale = new Vector3(0, 0, 0); //scale item to 0 to make invisible
+        }
+
+
+        public InventorySlot(int index) 
+        {
+            this.index = index;
         }
 
 
