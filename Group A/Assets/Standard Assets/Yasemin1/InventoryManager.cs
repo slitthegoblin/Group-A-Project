@@ -44,6 +44,17 @@ namespace RpgAdventure
                     }
                 });
             };
+
+            if (Input.GetKey(KeyCode.O))
+            {
+                InventorySlot.globalInv.ForEach(invSlot => {
+                    if (invSlot.item.thisItem == Item.itemType.Coin)
+                    {
+                        invSlot.Increment();
+                    }
+                });
+            };
+
         }
 
         private void OnTriggerEnter(Collider collision)
@@ -90,6 +101,19 @@ namespace RpgAdventure
                         {
                             invSlot.Show();
                             invSlot.Increment();
+                        }
+                    });
+                    break;
+                case "Coin":
+                    print("collect coin");
+                    InventorySlot.globalInv.ForEach(invSlot => {
+                        if (invSlot.item.thisItem == Item.itemType.Coin)
+                        {
+                        for(int i = 0; i <50; i++)
+                            {
+                                invSlot.Increment();
+                            }
+
                         }
                     });
                     break;
