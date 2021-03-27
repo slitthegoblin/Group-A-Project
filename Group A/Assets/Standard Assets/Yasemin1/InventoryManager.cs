@@ -11,7 +11,7 @@ namespace RpgAdventure
     {
 
         //public Dictionary<string, GameObject> inventory = new Dictionary<string, GameObject>();
-        [SerializeField] List<Image> invenSlots = new List<Image>(); //array of images called inventory slot
+        [SerializeField] List<InventorySlot> invenSlots = new List<InventorySlot>(); //array of images called inventory slot
         [SerializeField] List<Item> inventory = new List<Item>();
 
         public GameObject playerCollecting;
@@ -19,7 +19,7 @@ namespace RpgAdventure
         public GameObject spikedWeaponPrefab;
 
         public bool spikedWeapon;
-       // private bool Destroy;
+        //private bool Destroy;
 
 
         public int inventorySize;
@@ -31,9 +31,21 @@ namespace RpgAdventure
 
         private void OnTriggerEnter(Collider collision)
         {
+
             print(collision.gameObject.name);
             if (collision.gameObject.name == "test")
                 print("tester is working");
+
+
+            if (collision.gameObject.name == "SpikedWeapon(Clone)")
+            {   //two equals to compare and one = is to set
+                Item toAddtoInventory = new Item();
+                toAddtoInventory.thisItem = Item.itemType.SpikedWeapon; //thing on end is field within that class
+                inventory.Add(toAddtoInventory);
+
+                InventorySlot.globalInv
+
+            }
 
 
            //var placeHolder = collision.gameObject.GetComponent<Item>();
