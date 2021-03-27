@@ -30,6 +30,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Start()
 		{
+			transform.position = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
 			m_Animator = GetComponent<Animator>();
 			m_Rigidbody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
