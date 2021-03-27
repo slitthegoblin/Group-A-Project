@@ -5,7 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    public enum itemType { SpikedWeapon, Axe, Knife };
+    public enum itemType { SpikedWeapon, Axe, Knife, Vile};
     public itemType thisItem;
 
     public int damage; //then can change in inspector so different for every one

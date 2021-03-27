@@ -14,6 +14,8 @@ namespace RpgAdventure
         public GameObject knifeWeaponPrefab;
         public GameObject spikedWeaponSpawn;
         public GameObject spikedWeaponPrefab;
+        public GameObject vileSpawn;
+        public GameObject vilePrefab;
         public UnityEvent<ItemSpawner> OnItemPickup;
 
         // Start is called before the first frame update
@@ -22,6 +24,7 @@ namespace RpgAdventure
             Instantiate(axePrefab, axeSpawn.transform.position, Quaternion.identity);
             Instantiate(knifeWeaponPrefab, knifeWeaponSpawn.transform.position, Quaternion.identity);
             Instantiate(spikedWeaponPrefab, spikedWeaponSpawn.transform.position, Quaternion.identity);
+            Instantiate(vilePrefab, vileSpawn.transform.position, Quaternion.identity);
         }
 
         // Update is called once per frame
