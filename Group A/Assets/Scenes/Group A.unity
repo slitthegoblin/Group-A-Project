@@ -15220,7 +15220,7 @@ GameObject:
   - component: {fileID: 1064464308}
   - component: {fileID: 1064464307}
   m_Layer: 0
-  m_Name: Make the sac into flour Quest End
+  m_Name: Make the corn into flour Quest End
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20692,7 +20692,7 @@ GameObject:
   - component: {fileID: 1628496083}
   - component: {fileID: 1628496082}
   m_Layer: 0
-  m_Name: Make the sac into flour step 1
+  m_Name: lour step 1c into flour step 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20710,7 +20710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecfb60ab43fe4f41a58849d0a0c99de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Quest: Make the sac into flour
+  Quest: Make the corn into flour
   ThisStep: 0
 --- !u!65 &1628496083
 BoxCollider:
