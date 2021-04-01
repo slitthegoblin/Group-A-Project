@@ -10,6 +10,8 @@ public class Host : MonoBehaviour
     public Text text;
     private bool PastLine1;
 
+    public bool playerCanTalkToNpcNr1 = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +22,23 @@ public class Host : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Active_NPC != null)
+        if(playerCanTalkToNpcNr1 == true)
         {
-            if (!PastLine1 && Input.GetKeyDown(KeyCode.E))
+            if (Active_NPC != null)
             {
+                if (!PastLine1 && Input.GetKeyDown(KeyCode.E))
+                {
+                    text.text = Active_NPC.GetComponent<Client>().DisplayLine;
+                    PastLine1 = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Active_NPC.GetComponent<Client>().NextLine();
+                }
                 text.text = Active_NPC.GetComponent<Client>().DisplayLine;
-                PastLine1 = true;
             }
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
-                Active_NPC.GetComponent<Client>().NextLine();
-            }
-            text.text = Active_NPC.GetComponent<Client>().DisplayLine;
         }
+       
     }
 
     private void OnTriggerEnter(Collider other)
