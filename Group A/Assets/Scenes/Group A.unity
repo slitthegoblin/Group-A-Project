@@ -13127,6 +13127,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.45177284
       objectReference: {fileID: 0}
+    - target: {fileID: -2377678898046858952, guid: 615f2243dffeb9d43b27e6730ccc08ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -840777845830954692, guid: 615f2243dffeb9d43b27e6730ccc08ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -236726664430022290, guid: 615f2243dffeb9d43b27e6730ccc08ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19306,7 +19316,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a9b95a84bdda1eb4faaa429465963243,
         type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a9b95a84bdda1eb4faaa429465963243,
         type: 3}
@@ -21496,6 +21506,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.45177284
       objectReference: {fileID: 0}
+    - target: {fileID: -2377678898046858952, guid: 615f2243dffeb9d43b27e6730ccc08ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -840777845830954692, guid: 615f2243dffeb9d43b27e6730ccc08ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -236726664430022290, guid: 615f2243dffeb9d43b27e6730ccc08ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23052,7 +23072,7 @@ GameObject:
   - component: {fileID: 1628496083}
   - component: {fileID: 1628496082}
   m_Layer: 0
-  m_Name: lour step 1c into flour step 1
+  m_Name: tep 1step 1c into flour step 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
