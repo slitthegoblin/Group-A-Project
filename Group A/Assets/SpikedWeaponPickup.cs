@@ -9,7 +9,7 @@ public class SpikedWeaponPickup : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            transform.position = new Vector3(transform.position.x, transform.position.y - 100, transform.position.z);
         }
     }
 

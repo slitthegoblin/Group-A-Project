@@ -256,6 +256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemLabel: {fileID: 0}
   itemImage: {fileID: 1157615608}
+  dropItemButton: {fileID: 0}
+  playerInventory: {fileID: 93778785}
   inventorySlot: 0
   index: 3
   item: {fileID: 2008960351}
@@ -3862,6 +3864,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemLabel: {fileID: 0}
   itemImage: {fileID: 1009523234}
+  dropItemButton: {fileID: 0}
+  playerInventory: {fileID: 93778785}
   inventorySlot: 0
   index: 2
   item: {fileID: 828822374}
@@ -4202,6 +4206,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemLabel: {fileID: 484666707}
   itemImage: {fileID: 0}
+  dropItemButton: {fileID: 0}
+  playerInventory: {fileID: 0}
   inventorySlot: 0
   index: 5
   item: {fileID: 442388656}
@@ -5075,6 +5081,7 @@ RectTransform:
   m_Children:
   - {fileID: 46412960}
   - {fileID: 1191893690}
+  - {fileID: 1247353518}
   m_Father: {fileID: 1908370512}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5177,6 +5184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemLabel: {fileID: 0}
   itemImage: {fileID: 1191893691}
+  dropItemButton: {fileID: 1247353519}
+  playerInventory: {fileID: 93778785}
   inventorySlot: 0
   index: 1
   item: {fileID: 190724527}
@@ -6752,6 +6761,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemLabel: {fileID: 1830711430}
   itemImage: {fileID: 364924921}
+  dropItemButton: {fileID: 0}
+  playerInventory: {fileID: 93778785}
   inventorySlot: 0
   index: 4
   item: {fileID: 1690273258}
@@ -10093,7 +10104,7 @@ PrefabInstance:
     - target: {fileID: 2447475951986146442, guid: 3a7703ae61ba4d143b0270109b159cf8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.79
+      value: 44.58
       objectReference: {fileID: 0}
     - target: {fileID: 2447475951986146442, guid: 3a7703ae61ba4d143b0270109b159cf8,
         type: 3}
@@ -10103,7 +10114,7 @@ PrefabInstance:
     - target: {fileID: 2447475951986146442, guid: 3a7703ae61ba4d143b0270109b159cf8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.26
+      value: 2.38
       objectReference: {fileID: 0}
     - target: {fileID: 2447475951986146442, guid: 3a7703ae61ba4d143b0270109b159cf8,
         type: 3}
@@ -25221,6 +25232,135 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246054676}
   m_Mesh: {fileID: -7434549690534084444, guid: 3a22285ad96b07c44adacbe2c36f90eb, type: 3}
+--- !u!1 &1247353517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1247353518}
+  - component: {fileID: 1247353521}
+  - component: {fileID: 1247353520}
+  - component: {fileID: 1247353519}
+  m_Layer: 0
+  m_Name: DropItemButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1247353518
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247353517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.19972, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 204048025}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 67, y: -82}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1247353519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247353517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1247353520}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 204048029}
+        m_MethodName: DropItemEventHandler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1247353520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247353517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1247353521
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247353517}
+  m_CullTransparentMesh: 0
 --- !u!1 &1251359213
 GameObject:
   m_ObjectHideFlags: 0

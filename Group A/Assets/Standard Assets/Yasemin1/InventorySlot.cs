@@ -12,6 +12,9 @@ namespace RpgAdventure
         public Text itemLabel;
         public RawImage itemImage;
         public static List<InventorySlot> globalInv;
+        public Button dropItemButton;
+        public InventoryManager playerInventory;
+
         //global inv stores everything in the inventory slots - we have 4 inv slots so it stores all 4
         //if u make changes to the global inv it makes changes to all inv slots
         //global inv makes inventory slots accessible from all the other inv slots 
@@ -38,7 +41,29 @@ namespace RpgAdventure
             }
             globalInv.Add(this);
             Hide();
+            dropItemButton.onClick.AddListener(DropItemEventHandler);
         }
+
+        public void DropItemEventHandler()
+        {
+            //When drop item button is clicked, do this shit
+            if(itemCount > 0)
+            {
+                DropItem();
+            }
+        }
+        public void DropItem()
+        {
+            Decrement();
+            if(itemCount == 0)
+            {
+                Hide();
+                GameObject newItem = Instantiate(item.gameObject, new Vector3(playerInventory.transform.position.x, playerInventory.transform.position.y+3, playerInventory.transform.position.z), Quaternion.identity);
+                newItem.name = ("Dropped" + newItem.name);
+            }
+        }
+
+
 
         public void Show()
         { 
