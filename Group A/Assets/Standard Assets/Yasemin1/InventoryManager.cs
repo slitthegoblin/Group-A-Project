@@ -56,6 +56,18 @@ namespace RpgAdventure
 
         }
 
+        public int GetTotalweight()
+        {
+            int totalweight = 0;
+            InventorySlot.globalInv.ForEach(invSlot => { 
+                if(invSlot.itemCount > 0)
+                {
+                    totalweight += invSlot.item.weight;
+                }
+            });
+            return totalweight;
+        }
+
         private void OnTriggerEnter(Collider collision)
         {
 
@@ -93,10 +105,10 @@ namespace RpgAdventure
                         invSlot.Show();
                     }
                 });
-                break;
+               break;
             case "Vile1":
                 //print("collect vile1");
-                InventorySlot.globalInv.ForEach(invSlot => {
+                    InventorySlot.globalInv.ForEach(invSlot => {
                     if (invSlot.item.thisItem == Item.itemType.Vile)
                     {
                         invSlot.Show();
