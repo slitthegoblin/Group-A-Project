@@ -32,7 +32,6 @@ namespace RpgAdventure
         public int itemSpawner;
         InventorySlot inventorySlot;
 
-
         public void Update()
         {
             if (Input.GetKey(KeyCode.P))

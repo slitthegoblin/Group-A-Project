@@ -66,6 +66,7 @@ namespace RpgAdventure
         public InventorySlot(int index) 
         {
             this.index = index;
+
         }
 
 
