@@ -85,6 +85,7 @@ namespace RpgAdventure
                     if (invSlot.item.thisItem == Item.itemType.SpikedWeapon)
                     {
                         invSlot.Show(); //show the item in the inventory
+                        invSlot.Increment();
                     }
                 });
                 break;
@@ -94,6 +95,7 @@ namespace RpgAdventure
                     if (invSlot.item.thisItem == Item.itemType.Axe)
                     {
                         invSlot.Show();
+                        invSlot.Increment();
                     }
                 });
                 break;
@@ -103,6 +105,7 @@ namespace RpgAdventure
                     if (invSlot.item.thisItem == Item.itemType.Knife)
                     {
                         invSlot.Show();
+                        invSlot.Increment();
                     }
                 });
                break;

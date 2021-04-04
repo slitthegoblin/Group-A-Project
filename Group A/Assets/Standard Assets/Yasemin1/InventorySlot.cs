@@ -53,14 +53,32 @@ namespace RpgAdventure
 
         public void Increment()
         {
-            itemLabel.text = (int.Parse(itemLabel.text) + 1).ToString();
+            itemCount += 1;
+            try //try catch because not all inventory slots have a label
+            {
+                itemLabel.text = itemCount.ToString();
+            }
+            catch
+            {
+                //do nothing if no label
+            }
+            
         }
 
         public void Decrement()
         {
-            if (int.Parse(itemLabel.text) > 0){
-                itemLabel.text = (int.Parse(itemLabel.text) - 1).ToString();
+            itemCount -= 1;
+            try //try catch because not all inventory slots have a label
+            {
+                if (itemCount > 0){
+                    itemLabel.text = itemCount.ToString();
+                }
             }
+            catch
+            {
+                //do nothing if no label
+            }
+
         }
 
         public InventorySlot(int index) 

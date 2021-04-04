@@ -2,35 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStamina : MonoBehaviour
+
+namespace RpgAdventure
 {
-    //    public Rigidbody rb;
-    public float staminaAmount = 100f;
-    Animator animator;
-
-
-    private void Start()
+    public class PlayerStamina : MonoBehaviour
     {
-        animator = GetComponent<Animator>();
-        staminaAmount = 100f;
-    }
+        //    public Rigidbody rb;
+        public float staminaAmount = 100f;
+        Animator animator;
+        InventoryManager inventoryManager;
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (animator.GetBool("isRunning"))
+        private void Start()
         {
-            //StaminaBar.instance.staminaBar.value = StaminaBar.instance.staminaBar.value;
-            staminaAmount -= 0.2f;
-            if (staminaAmount < 0) staminaAmount = 0;
+            animator = GetComponent<Animator>();
+            staminaAmount = 100f;
+            inventoryManager = GetComponent<InventoryManager>();
         }
-        else
-        {
-            staminaAmount += 0.1f;
-            if (staminaAmount > 100) staminaAmount = 100;
-        }
-        StaminaBar.instance.staminaBar.value = staminaAmount;
-    }
 
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (animator.GetBool("isRunning"))
+            {
+                //StaminaBar.instance.staminaBar.value = StaminaBar.instance.staminaBar.value;
+                int totalWeight = inventoryManager.GetTotalweight();
+                staminaAmount -= 0.2f * totalWeight;
+                if (staminaAmount < 0) staminaAmount = 0;
+                if (staminaAmount == 0) animator.SetBool("isRunning", false);
+            }
+            else
+            {
+                staminaAmount += 0.1f;
+                if (staminaAmount > 100) staminaAmount = 100;
+            }
+            StaminaBar.instance.staminaBar.value = staminaAmount;
+        }
+
+    }
 }
+
