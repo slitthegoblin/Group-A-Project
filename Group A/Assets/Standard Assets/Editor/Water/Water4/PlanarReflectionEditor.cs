@@ -15,7 +15,8 @@ namespace UnityStandardAssets.Water
         private SerializedProperty reflectionMask;
         private SerializedProperty reflectSkybox;
         private SerializedProperty clearColor;
-        private bool showKidsWithReflectionHint = false;
+
+        bool showKidsWithReflectionHint = false;
 
         public void OnEnable()
         {

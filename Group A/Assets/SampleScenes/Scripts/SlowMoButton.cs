@@ -15,12 +15,13 @@ namespace UnityStandardAssets.SceneUtils
 
         private bool m_SlowMo;
 
-        private void Start()
+
+       	void Start()
         {
 			m_SlowMo = false;
         }
 
-        private void OnDestroy()
+		void OnDestroy()
 		{
 			Time.timeScale = 1;
 		}

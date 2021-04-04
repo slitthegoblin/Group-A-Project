@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
-internal class WaterEditorUtility
+class WaterEditorUtility
 {
 	// helper functions to retrieve & set material values
 

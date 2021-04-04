@@ -19,23 +19,23 @@ namespace UnityStandardAssets.CrossPlatformInput
 		public string horizontalAxisName = "Horizontal"; // The name given to the horizontal axis for the cross platform input
 		public string verticalAxisName = "Vertical"; // The name given to the vertical axis for the cross platform input
 
-        private Vector3 m_StartPos;
-        private bool m_UseX; // Toggle for using the x axis
-        private bool m_UseY; // Toggle for using the Y axis
-        private CrossPlatformInputManager.VirtualAxis m_HorizontalVirtualAxis; // Reference to the joystick in the cross platform input
-        private CrossPlatformInputManager.VirtualAxis m_VerticalVirtualAxis; // Reference to the joystick in the cross platform input
+		Vector3 m_StartPos;
+		bool m_UseX; // Toggle for using the x axis
+		bool m_UseY; // Toggle for using the Y axis
+		CrossPlatformInputManager.VirtualAxis m_HorizontalVirtualAxis; // Reference to the joystick in the cross platform input
+		CrossPlatformInputManager.VirtualAxis m_VerticalVirtualAxis; // Reference to the joystick in the cross platform input
 
-        private void OnEnable()
+		void OnEnable()
 		{
 			CreateVirtualAxes();
 		}
 
-        private void Start()
+        void Start()
         {
             m_StartPos = transform.position;
         }
 
-        private void UpdateVirtualAxes(Vector3 value)
+		void UpdateVirtualAxes(Vector3 value)
 		{
 			var delta = m_StartPos - value;
 			delta.y = -delta.y;
@@ -51,7 +51,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			}
 		}
 
-        private void CreateVirtualAxes()
+		void CreateVirtualAxes()
 		{
 			// set axes to use
 			m_UseX = (axesToUse == AxisOption.Both || axesToUse == AxisOption.OnlyHorizontal);
@@ -102,7 +102,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		public void OnPointerDown(PointerEventData data) { }
 
-        private void OnDisable()
+		void OnDisable()
 		{
 			// remove the joysticks from the cross platform input
 			if (m_UseX)

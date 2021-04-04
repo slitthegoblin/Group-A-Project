@@ -9,7 +9,8 @@ public class PauseMenu : MonoBehaviour
     private float m_VolumeRef = 1f;
     private bool m_Paused;
 
-    private void Awake()
+
+    void Awake()
     {
         m_MenuToggle = GetComponent <Toggle> ();
 	}
@@ -49,7 +50,7 @@ public class PauseMenu : MonoBehaviour
 
 
 #if !MOBILE_INPUT
-    private void Update()
+	void Update()
 	{
 		if(Input.GetKeyUp(KeyCode.Escape))
 		{

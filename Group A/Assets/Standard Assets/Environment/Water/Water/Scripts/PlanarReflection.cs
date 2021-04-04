@@ -13,10 +13,12 @@ namespace UnityStandardAssets.Water
         public Color clearColor = Color.grey;
         public String reflectionSampler = "_ReflectionTex";
         public float clipPlaneOffset = 0.07F;
-        private Vector3 m_Oldpos;
-        private Camera m_ReflectionCamera;
-        private Material m_SharedMaterial;
-        private Dictionary<Camera, bool> m_HelperCameras;
+
+
+        Vector3 m_Oldpos;
+        Camera m_ReflectionCamera;
+        Material m_SharedMaterial;
+        Dictionary<Camera, bool> m_HelperCameras;
 
 
         public void Start()
@@ -24,7 +26,8 @@ namespace UnityStandardAssets.Water
             m_SharedMaterial = ((WaterBase)gameObject.GetComponent(typeof(WaterBase))).sharedMaterial;
         }
 
-        private Camera CreateReflectionCameraFor(Camera cam)
+
+        Camera CreateReflectionCameraFor(Camera cam)
         {
             String reflName = gameObject.name + "Reflection" + cam.name;
             GameObject go = GameObject.Find(reflName);
@@ -52,14 +55,16 @@ namespace UnityStandardAssets.Water
             return reflectCamera;
         }
 
-        private void SetStandardCameraParameter(Camera cam, LayerMask mask)
+
+        void SetStandardCameraParameter(Camera cam, LayerMask mask)
         {
             cam.cullingMask = mask & ~(1 << LayerMask.NameToLayer("Water"));
             cam.backgroundColor = Color.black;
             cam.enabled = false;
         }
 
-        private RenderTexture CreateTextureFor(Camera cam)
+
+        RenderTexture CreateTextureFor(Camera cam)
         {
             RenderTexture rt = new RenderTexture(Mathf.FloorToInt(cam.pixelWidth * 0.5F),
                 Mathf.FloorToInt(cam.pixelHeight * 0.5F), 24);
@@ -128,7 +133,8 @@ namespace UnityStandardAssets.Water
             Shader.DisableKeyword("WATER_REFLECTIVE");
         }
 
-        private void RenderReflectionFor(Camera cam, Camera reflectCamera)
+
+        void RenderReflectionFor(Camera cam, Camera reflectCamera)
         {
             if (!reflectCamera)
             {
@@ -196,7 +202,8 @@ namespace UnityStandardAssets.Water
             GL.invertCulling = false;
         }
 
-        private void SaneCameraSettings(Camera helperCam)
+
+        void SaneCameraSettings(Camera helperCam)
         {
             helperCam.depthTextureMode = DepthTextureMode.None;
             helperCam.backgroundColor = Color.black;
@@ -204,7 +211,8 @@ namespace UnityStandardAssets.Water
             helperCam.renderingPath = RenderingPath.Forward;
         }
 
-        private static Matrix4x4 CalculateObliqueMatrix(Matrix4x4 projection, Vector4 clipPlane)
+
+        static Matrix4x4 CalculateObliqueMatrix(Matrix4x4 projection, Vector4 clipPlane)
         {
             Vector4 q = projection.inverse * new Vector4(
                 Sgn(clipPlane.x),
@@ -222,7 +230,8 @@ namespace UnityStandardAssets.Water
             return projection;
         }
 
-        private static Matrix4x4 CalculateReflectionMatrix(Matrix4x4 reflectionMat, Vector4 plane)
+
+        static Matrix4x4 CalculateReflectionMatrix(Matrix4x4 reflectionMat, Vector4 plane)
         {
             reflectionMat.m00 = (1.0F - 2.0F * plane[0] * plane[0]);
             reflectionMat.m01 = (- 2.0F * plane[0] * plane[1]);
@@ -247,7 +256,8 @@ namespace UnityStandardAssets.Water
             return reflectionMat;
         }
 
-        private static float Sgn(float a)
+
+        static float Sgn(float a)
         {
             if (a > 0.0F)
             {
@@ -260,7 +270,8 @@ namespace UnityStandardAssets.Water
             return 0.0F;
         }
 
-        private Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
+
+        Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
         {
             Vector3 offsetPos = pos + normal * clipPlaneOffset;
             Matrix4x4 m = cam.worldToCameraMatrix;

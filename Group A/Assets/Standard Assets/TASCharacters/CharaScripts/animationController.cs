@@ -13,10 +13,16 @@ public class animationController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   bool isWalking = animator.GetBool("isWalking");
+    { bool isWalking = animator.GetBool("isWalking");
         bool isrunning = animator.GetBool("isRunning");
+        bool isattacking = animator.GetBool("isAttacking");
+
+
         bool forwardMovement = Input.GetKey("w");
         bool runMovement = Input.GetKey("left shift");
+        bool isAttacking = Input.GetKey("q");
+
+
 
 
         if (!isWalking && forwardMovement)
@@ -39,5 +45,16 @@ public class animationController : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
         }
+
+        if (isAttacking == true)
+        {
+            animator.SetBool("isAttacking", true);
+        }
+        else
+        {
+            animator.SetBool("isAttacking", false);
+        }
+
     }
+        
 }

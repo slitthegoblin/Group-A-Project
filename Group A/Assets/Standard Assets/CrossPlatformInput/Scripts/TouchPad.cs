@@ -31,31 +31,32 @@ namespace UnityStandardAssets.CrossPlatformInput
 		public string verticalAxisName = "Vertical"; // The name given to the vertical axis for the cross platform input
 		public float Xsensitivity = 1f;
 		public float Ysensitivity = 1f;
-        private Vector3 m_StartPos;
-        private Vector2 m_PreviousDelta;
-        private Vector3 m_JoytickOutput;
-        private bool m_UseX; // Toggle for using the x axis
-        private bool m_UseY; // Toggle for using the Y axis
-        private CrossPlatformInputManager.VirtualAxis m_HorizontalVirtualAxis; // Reference to the joystick in the cross platform input
-        private CrossPlatformInputManager.VirtualAxis m_VerticalVirtualAxis; // Reference to the joystick in the cross platform input
-        private bool m_Dragging;
-        private int m_Id = -1;
-        private Vector2 m_PreviousTouchPos; // swipe style control touch
+
+		Vector3 m_StartPos;
+		Vector2 m_PreviousDelta;
+		Vector3 m_JoytickOutput;
+		bool m_UseX; // Toggle for using the x axis
+		bool m_UseY; // Toggle for using the Y axis
+		CrossPlatformInputManager.VirtualAxis m_HorizontalVirtualAxis; // Reference to the joystick in the cross platform input
+		CrossPlatformInputManager.VirtualAxis m_VerticalVirtualAxis; // Reference to the joystick in the cross platform input
+		bool m_Dragging;
+		int m_Id = -1;
+		Vector2 m_PreviousTouchPos; // swipe style control touch
 
 
 #if !UNITY_EDITOR
     private Vector3 m_Center;
     private Image m_Image;
 #else
-        private Vector3 m_PreviousMouse;
+		Vector3 m_PreviousMouse;
 #endif
 
-        private void OnEnable()
+		void OnEnable()
 		{
 			CreateVirtualAxes();
 		}
 
-        private void Start()
+        void Start()
         {
 #if !UNITY_EDITOR
             m_Image = GetComponent<Image>();
@@ -63,7 +64,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 #endif
         }
 
-        private void CreateVirtualAxes()
+		void CreateVirtualAxes()
 		{
 			// set axes to use
 			m_UseX = (axesToUse == AxisOption.Both || axesToUse == AxisOption.OnlyHorizontal);
@@ -82,7 +83,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			}
 		}
 
-        private void UpdateVirtualAxes(Vector3 value)
+		void UpdateVirtualAxes(Vector3 value)
 		{
 			value = value.normalized;
 			if (m_UseX)
@@ -107,7 +108,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 #endif
 		}
 
-        private void Update()
+		void Update()
 		{
 			if (!m_Dragging)
 			{
@@ -143,7 +144,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			UpdateVirtualAxes(Vector3.zero);
 		}
 
-        private void OnDisable()
+		void OnDisable()
 		{
 			if (CrossPlatformInputManager.AxisExists(horizontalAxisName))
 				CrossPlatformInputManager.UnRegisterVirtualAxis(horizontalAxisName);

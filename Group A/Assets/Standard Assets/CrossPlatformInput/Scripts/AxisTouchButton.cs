@@ -13,10 +13,10 @@ namespace UnityStandardAssets.CrossPlatformInput
 		public float responseSpeed = 3; // The speed at which the axis touch button responds
 		public float returnToCentreSpeed = 3; // The speed at which the button will return to its centre
 
-        private AxisTouchButton m_PairedWith; // Which button this one is paired with
-        private CrossPlatformInputManager.VirtualAxis m_Axis; // A reference to the virtual axis as it is in the cross platform input
+		AxisTouchButton m_PairedWith; // Which button this one is paired with
+		CrossPlatformInputManager.VirtualAxis m_Axis; // A reference to the virtual axis as it is in the cross platform input
 
-        private void OnEnable()
+		void OnEnable()
 		{
 			if (!CrossPlatformInputManager.AxisExists(axisName))
 			{
@@ -31,7 +31,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			FindPairedButton();
 		}
 
-        private void FindPairedButton()
+		void FindPairedButton()
 		{
 			// find the other button witch which this button should be paired
 			// (it should have the same axisName)
@@ -49,7 +49,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			}
 		}
 
-        private void OnDisable()
+		void OnDisable()
 		{
 			// The object is disabled so remove it from the cross platform input system
 			m_Axis.Remove();

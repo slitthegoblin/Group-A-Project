@@ -167,7 +167,7 @@ namespace UnityStandardAssets.Water
 
 
         // Cleanup all the objects we possibly have created
-        private void OnDisable()
+        void OnDisable()
         {
             if (m_ReflectionTexture)
             {
@@ -194,7 +194,7 @@ namespace UnityStandardAssets.Water
 
         // This just sets up some matrices in the material; for really
         // old cards to make water texture scroll.
-        private void Update()
+        void Update()
         {
             if (!GetComponent<Renderer>())
             {
@@ -223,7 +223,7 @@ namespace UnityStandardAssets.Water
             mat.SetVector("_WaveScale4", waveScale4);
         }
 
-        private void UpdateCameraModes(Camera src, Camera dest)
+        void UpdateCameraModes(Camera src, Camera dest)
         {
             if (dest == null)
             {
@@ -259,7 +259,7 @@ namespace UnityStandardAssets.Water
 
 
         // On-demand create any objects we need for water
-        private void CreateWaterObjects(Camera currentCamera, out Camera reflectionCamera, out Camera refractionCamera)
+        void CreateWaterObjects(Camera currentCamera, out Camera reflectionCamera, out Camera refractionCamera)
         {
             WaterMode mode = GetWaterMode();
 
@@ -331,7 +331,7 @@ namespace UnityStandardAssets.Water
             }
         }
 
-        private WaterMode GetWaterMode()
+        WaterMode GetWaterMode()
         {
             if (m_HardwareWaterSupport < waterMode)
             {
@@ -340,7 +340,7 @@ namespace UnityStandardAssets.Water
             return waterMode;
         }
 
-        private WaterMode FindHardwareWaterSupport()
+        WaterMode FindHardwareWaterSupport()
         {
             if (!GetComponent<Renderer>())
             {
@@ -367,7 +367,7 @@ namespace UnityStandardAssets.Water
         }
 
         // Given position/normal of the plane, calculates plane in camera space.
-        private Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
+        Vector4 CameraSpacePlane(Camera cam, Vector3 pos, Vector3 normal, float sideSign)
         {
             Vector3 offsetPos = pos + normal * clipPlaneOffset;
             Matrix4x4 m = cam.worldToCameraMatrix;
@@ -377,7 +377,7 @@ namespace UnityStandardAssets.Water
         }
 
         // Calculates reflection matrix around the given plane
-        private static void CalculateReflectionMatrix(ref Matrix4x4 reflectionMat, Vector4 plane)
+        static void CalculateReflectionMatrix(ref Matrix4x4 reflectionMat, Vector4 plane)
         {
             reflectionMat.m00 = (1F - 2F * plane[0] * plane[0]);
             reflectionMat.m01 = (- 2F * plane[0] * plane[1]);

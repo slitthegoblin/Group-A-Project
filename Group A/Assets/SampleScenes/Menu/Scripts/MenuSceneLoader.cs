@@ -7,7 +7,7 @@ public class MenuSceneLoader : MonoBehaviour
 
     private GameObject m_Go;
 
-    private void Awake ()
+	void Awake ()
 	{
 	    if (m_Go == null)
 	    {
