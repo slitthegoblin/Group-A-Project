@@ -14,13 +14,13 @@ namespace RpgAdventure
         [SerializeField] List<InventorySlot> invenSlots = new List<InventorySlot>(); //array of images called inventory slot
         [SerializeField] List<Item> inventory = new List<Item>();
 
-        public GameObject playerCollecting;
-        public GameObject spikedWeaponSpawn;
-        public GameObject spikedWeaponPrefab;
-        public GameObject AxeSpawn;
-        public GameObject AxePrefab;
-        public GameObject KnifeWeaponSpawn;
-        public GameObject KnifeWeaponPrefab;
+        //public GameObject playerCollecting;
+        //public GameObject spikedWeaponSpawn;
+        //public GameObject spikedWeaponPrefab;
+        //public GameObject AxeSpawn;
+        //public GameObject AxePrefab;
+        //public GameObject KnifeWeaponSpawn;
+        //public GameObject KnifeWeaponPrefab;
 
         public bool spikedWeapon;
         //private bool Destroy;
@@ -64,10 +64,11 @@ namespace RpgAdventure
                 print("tester is working");
 
             //switch faster than lots of if 
+            print("Run in to " + collision.gameObject.name);
             switch (collision.gameObject.name)  //switch - check the name of the object hte character is colliding with
             {
-            case "SpikedWeapon(Clone)": //each of the lines that start with case, checks the name and runs the code below
-                print("run into spiked weapon"); //print to check if working in console
+            case "SpikedWeapon": //each of the lines that start with case, checks the name and runs the code below
+                //print("run into spiked weapon"); //print to check if working in console
                 InventorySlot.globalInv.ForEach(invSlot => {  //loop through all inv slots and find the one that corresponds to the item the player has collided with
                     if (invSlot.item.thisItem == Item.itemType.SpikedWeapon)
                     {
@@ -76,7 +77,7 @@ namespace RpgAdventure
                 });
                 break;
             case "Axe":
-                print("run into axe");
+                //print("run into axe");
                 InventorySlot.globalInv.ForEach(invSlot => {
                     if (invSlot.item.thisItem == Item.itemType.Axe)
                     {
@@ -85,7 +86,7 @@ namespace RpgAdventure
                 });
                 break;
             case "KnifeWeapon":
-                print("run into knife");
+                //print("run into knife");
                 InventorySlot.globalInv.ForEach(invSlot => {
                     if (invSlot.item.thisItem == Item.itemType.Knife)
                     {
@@ -93,28 +94,27 @@ namespace RpgAdventure
                     }
                 });
                 break;
-                case "Vile1":
-                    print("collect vile1");
-                    InventorySlot.globalInv.ForEach(invSlot => {
-                        if (invSlot.item.thisItem == Item.itemType.Vile)
+            case "Vile1":
+                //print("collect vile1");
+                InventorySlot.globalInv.ForEach(invSlot => {
+                    if (invSlot.item.thisItem == Item.itemType.Vile)
+                    {
+                        invSlot.Show();
+                        invSlot.Increment();
+                    }
+                });
+                break;
+            case "Coin":
+                //print("collect coin");
+                InventorySlot.globalInv.ForEach(invSlot => {
+                    if (invSlot.item.thisItem == Item.itemType.Coin)
+                    {
+                    for(int i = 0; i <50; i++)
                         {
-                            invSlot.Show();
                             invSlot.Increment();
                         }
-                    });
-                    break;
-                case "Coin":
-                    print("collect coin");
-                    InventorySlot.globalInv.ForEach(invSlot => {
-                        if (invSlot.item.thisItem == Item.itemType.Coin)
-                        {
-                        for(int i = 0; i <50; i++)
-                            {
-                                invSlot.Increment();
-                            }
-
-                        }
-                    });
+                    }
+                });
                     break;
             }
 
