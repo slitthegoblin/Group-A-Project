@@ -9,7 +9,6 @@ public class StaminaBar : MonoBehaviour
     public Slider staminaBar;
 
     Animator animator;
-    [SerializeField] Animator anim;
     private int maxStamina = 100;
     private int currentStamina;
 
@@ -42,7 +41,7 @@ public class StaminaBar : MonoBehaviour
         else
         {
 //             Debug.Log("Not enough stamina"); // To be changed to be shown into screen
-            anim.SetBool("isRunning", false);
+          //  anim.SetBool("isRunning", false);
 
         }
 
