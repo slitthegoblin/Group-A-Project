@@ -21,12 +21,7 @@ public class AnimationTest : MonoBehaviour
 
         if (other.gameObject.tag == "NPC")
         {
-            anim.SetBool("isTurning", true);
             print("No collision");
-        }
-        else
-        {
-            anim.SetBool("isTurning", false);
         }
     }
 }
