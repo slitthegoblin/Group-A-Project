@@ -58,7 +58,8 @@ namespace RpgAdventure
             if(itemCount == 0)
             {
                 Hide();
-                GameObject newItem = Instantiate(item.gameObject, new Vector3(playerInventory.transform.position.x, playerInventory.transform.position.y+3, playerInventory.transform.position.z), Quaternion.identity);
+                GameObject newItem = Instantiate(item.gameObject, new Vector3(playerInventory.transform.position.x, playerInventory.transform.position.y+3,
+                    playerInventory.transform.position.z), Quaternion.identity);
                 newItem.name = ("Dropped" + newItem.name);
             }
         }
