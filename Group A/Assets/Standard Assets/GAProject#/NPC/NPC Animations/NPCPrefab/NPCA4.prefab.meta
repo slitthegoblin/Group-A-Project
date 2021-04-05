@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Group A/Assets/Standard Assets/GAProject#/NPC/NPC Animations/NPCPrefab/NPCA4.prefab.meta
 guid: eda08df05d3fed744acc2129d4d9c6b1
 PrefabImporter:
+=======
+guid: 0de3730b71e479c47995d4a98395073e
+folderAsset: yes
+DefaultImporter:
+>>>>>>> parent of 0c11c2d (aksugd):Group A/Assets/Standard Assets/Characters/ThirdPersonCharacter/Textures.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
