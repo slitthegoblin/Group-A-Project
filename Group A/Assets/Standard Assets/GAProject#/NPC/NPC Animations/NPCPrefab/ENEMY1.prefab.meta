@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Group A/Assets/Standard Assets/GAProject#/NPC/NPC Animations/NPCPrefab/ENEMY1.prefab.meta
 guid: 24835c0358f6c404d9e93c16a6b4f923
 PrefabImporter:
+=======
+guid: 6368f4c411282e0448e9431054707929
+folderAsset: yes
+DefaultImporter:
+>>>>>>> parent of 0c11c2d (aksugd):Group A/Assets/Standard Assets/GAProject#/NPC/NPC Animations/Car/Models.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
