@@ -34513,7 +34513,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 96d0edcd54dd60c438b2dc87c4ee3c0f, type: 2}
+      objectReference: {fileID: 2100000, guid: e15e25837effc044688a2f7a5873ea7c, type: 2}
     - target: {fileID: 4495414801083549842, guid: 642eed5eb39eed84d82ce82dea7a06ce,
         type: 3}
       propertyPath: m_CastShadows
@@ -36095,7 +36095,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2019395287dad294b80201339b9a0103, type: 2}
+      objectReference: {fileID: 2100000, guid: e15e25837effc044688a2f7a5873ea7c, type: 2}
     - target: {fileID: 5901893356585517859, guid: a9b95a84bdda1eb4faaa429465963243,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
