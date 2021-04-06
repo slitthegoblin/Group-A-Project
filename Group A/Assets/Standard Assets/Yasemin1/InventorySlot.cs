@@ -15,17 +15,17 @@ namespace RpgAdventure
         public Button dropItemButton;
         public InventoryManager playerInventory;
 
+        public bool inventorySlot;
+        public int index;
+
+        public Item item;
+        public int itemCount;
         //global inv stores everything in the inventory slots - we have 4 inv slots so it stores all 4
         //if u make changes to the global inv it makes changes to all inv slots
         //global inv makes inventory slots accessible from all the other inv slots 
         //if u reference global inv in inv manager u can access all inv slots available (use unity to make changes)
         //static = this object is the same across all instances of inv slots
 
-        public bool inventorySlot;
-        public int index;
-
-        public Item item;
-        public int itemCount;
         //in inv managfer creatre another one saying if collides witrh potion find inv slot with potion whatever the item count is add 1
 
         //public string spikedWeapon;
