@@ -424,7 +424,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 13962531205479395}
-    m_Position: {x: 340, y: 120, z: 0}
+    m_Position: {x: 320, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4171455738478195246}
     m_Position: {x: 550, y: 360, z: 0}
@@ -829,7 +829,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: horizontal
     m_Mirror: 0
-  m_BlendParameter: vertical
+  m_BlendParameter: horizontal
   m_BlendParameterY: horizontal
   m_MinThreshold: -1
   m_MaxThreshold: 1
