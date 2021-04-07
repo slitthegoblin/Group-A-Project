@@ -8,6 +8,7 @@ TagManager:
   - StartQuest
   - QuestEnd
   - Player1
+  - Quest1
   layers:
   - Default
   - TransparentFX

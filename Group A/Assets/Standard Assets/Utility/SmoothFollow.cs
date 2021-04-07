@@ -21,11 +21,11 @@ namespace UnityStandardAssets.Utility
 		[SerializeField]
 		private float heightDamping;
 
-        // Use this for initialization
-        private void Start() { }
+		// Use this for initialization
+		void Start() { }
 
-        // Update is called once per frame
-        private void LateUpdate()
+		// Update is called once per frame
+		void LateUpdate()
 		{
 			// Early out if we don't have a target
 			if (!target)

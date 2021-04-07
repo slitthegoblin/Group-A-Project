@@ -87,8 +87,8 @@ namespace UnityStandardAssets.Utility.Inspector
     [CustomPropertyDrawer(typeof (AutoMobileShaderSwitch.ReplacementList))]
     public class ReplacementListDrawer : PropertyDrawer
     {
-        private const float k_LineHeight = 18;
-        private const float k_Spacing = 4;
+        const float k_LineHeight = 18;
+        const float k_Spacing = 4;
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
