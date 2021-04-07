@@ -18,6 +18,7 @@ public class QuestMannager : MonoBehaviour
             quest.CurrentStep = 0;
             quest.QuestTextBox = GameObject.Find("PlayerQuestDisplay").GetComponent<Text>();
             quest.QuestTextBox.text = other.gameObject.GetComponent<QuestStart>().QuestName;
+            Destroy(other.gameObject);
         }
     }
 
