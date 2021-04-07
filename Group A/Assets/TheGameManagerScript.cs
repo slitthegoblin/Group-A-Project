@@ -26,11 +26,8 @@ namespace RpgAdventure
             Instantiate(spikedWeaponPrefab, spikedWeaponSpawn.transform.position, Quaternion.identity);
             Instantiate(vilePrefab, vileSpawn.transform.position, Quaternion.identity);
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
+
+
+
