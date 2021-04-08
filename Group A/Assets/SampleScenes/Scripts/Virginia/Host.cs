@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RpgAdventure
-{
     public class Host : MonoBehaviour
     {
         private GameObject Active_NPC = null;
@@ -12,6 +10,9 @@ namespace RpgAdventure
         private bool PastLine1;
 
         public bool playerCanTalkToNpcNr1 = false;
+        public bool playerCanTalkToNpcNr2 = false;
+        public bool playerCanTalkToNpcNr3 = false;
+        public bool playerCanTalkToNpcNr4 = false;
 
 
         // Start is called before the first frame update
@@ -39,8 +40,61 @@ namespace RpgAdventure
                     text.text = Active_NPC.GetComponent<Client>().DisplayLine;
                 }
             }
-
+            else if(playerCanTalkToNpcNr2 == true)
+            {
+              if (Active_NPC != null)
+              {
+                if (!PastLine1 && Input.GetKeyDown(KeyCode.E))
+                {
+                    text.text = Active_NPC.GetComponent<Client>().DisplayLine;
+                    PastLine1 = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Active_NPC.GetComponent<Client>().NextLine();
+                }
+                text.text = Active_NPC.GetComponent<Client>().DisplayLine;
+              }
+            }
+        else if (playerCanTalkToNpcNr3 == true)
+        {
+            if (Active_NPC != null)
+            {
+                if (!PastLine1 && Input.GetKeyDown(KeyCode.E))
+                {
+                    text.text = Active_NPC.GetComponent<Client>().DisplayLine;
+                    PastLine1 = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Active_NPC.GetComponent<Client>().NextLine();
+                }
+                text.text = Active_NPC.GetComponent<Client>().DisplayLine;
+            }
         }
+        else if (playerCanTalkToNpcNr4 == true)
+        {
+            if (Active_NPC != null)
+            {
+                if (!PastLine1 && Input.GetKeyDown(KeyCode.E))
+                {
+                    text.text = Active_NPC.GetComponent<Client>().DisplayLine;
+                    PastLine1 = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Active_NPC.GetComponent<Client>().NextLine();
+                }
+                text.text = Active_NPC.GetComponent<Client>().DisplayLine;
+            }
+        }
+
+            if(vile1 == true && vile2 == true && vile3 == true)
+            {
+            gameFinished.gameObject.SetActive(true);
+            }
+
+    }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -74,5 +128,38 @@ namespace RpgAdventure
             Active_NPC = null;
             PastLine1 = false;
         }
+
+        //GINTARE
+
+        [SerializeField] public Host host;
+
+        public bool vile1;
+        public bool vile2;
+        public bool vile3;
+    public GameObject gameFinished;
+
+        GameObject questItem;
+
+        // List<Item> inventory = new List<Item>();
+
+
+        public void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == "HerbalFlower") // if requierment1 is in the inventory
+            {
+                host.playerCanTalkToNpcNr1 = true; // set qest bool to true
+            }
+            else if (collision.gameObject.tag == "HerbalFlower")
+            {
+                host.playerCanTalkToNpcNr2 = true;
+            }
+            else if (collision.gameObject.tag == "Coins")
+            {
+                host.playerCanTalkToNpcNr3 = true;
+            }
+            else if (collision.gameObject.tag == "Drinks")
+            {
+                host.playerCanTalkToNpcNr4 = true;
+            }
+        }
     }
-}
