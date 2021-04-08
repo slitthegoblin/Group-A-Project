@@ -9,6 +9,13 @@ TagManager:
   - QuestEnd
   - Player1
   - Quest1
+  - QuestT1
+  - QuestT2
+  - QuestT3
+  - QuestT4
+  - QuestT5
+  - QuestT6
+  - QuestT7
   layers:
   - Default
   - TransparentFX
