@@ -133,9 +133,9 @@ using UnityEngine.UI;
 
         [SerializeField] public Host host;
 
-        public bool vile1;
-        public bool vile2;
-        public bool vile3;
+        public bool vile1 = false;
+        public bool vile2 = false;
+        public bool vile3 = false;
     public GameObject gameFinished;
 
         GameObject questItem;
@@ -148,10 +148,12 @@ using UnityEngine.UI;
             if (collision.gameObject.tag == "HerbalFlower") // if requierment1 is in the inventory
             {
                 host.playerCanTalkToNpcNr1 = true; // set qest bool to true
+                vile1 = true;
             }
-            else if (collision.gameObject.tag == "HerbalFlower")
+            else if (collision.gameObject.tag == "FlourBag")
             {
-                host.playerCanTalkToNpcNr2 = true;
+                host.playerCanTalkToNpcNr4 = true;
+                vile3 = true;
             }
             else if (collision.gameObject.tag == "Coins")
             {
@@ -159,7 +161,8 @@ using UnityEngine.UI;
             }
             else if (collision.gameObject.tag == "Drinks")
             {
-                host.playerCanTalkToNpcNr4 = true;
+                host.playerCanTalkToNpcNr2 = true;
+                vile2 = true;
             }
         }
     }
